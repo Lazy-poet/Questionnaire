@@ -21,10 +21,36 @@
 $(window).on("load", ()=>{
   $("#exampleModalCenter").modal("show");
 });
+const isValid = (element)=>{
+return element.name && element.value
+}
+const isChecked = element =>{
+  return !['checkbox', 'radio'].includes(element.type) || element.checked
+}
+const isCheckBox = element => element.type === "checkbox";
 
+const formToJSON_deconstructed = elements =>{
+  const reducerFunction=(data, element) =>{
+  data[element.name] = element.value;
+  console.log(JSON.stringify(data));
+  return data
+    }
+    const reducerInitialValue ={};
+    const formData = [].reduce.call(elements, reducerFunction, reducerInitialValue);
+return formData
+}
+const formToJSON = elements =>[].reduce.call(elements, (data, element) =>{
+  if(isValid(element) && isChecked(element)){  
+  if(isCheckBox(element)){
+  data[element.name] =(data[element.name] || []).concat(element.value)
+  }
+  else data[element.name] = element.value
+  }
+  return data;
+}, {})
 function handleFormSubmit(e){
   e.preventDefault();
-const data = {};
+const data = formToJSON(form.elements);
 const dataDisplay = document.getElementsByClassName("data-display")[0]
 dataDisplay.textContent = JSON.stringify(data, null, " ");
 
@@ -36,7 +62,7 @@ form.addEventListener('submit', handleFormSubmit);
  * @param {HTMLFormControlsCollection}
 @return {Object}
 */
-const formToJSON = elements =>[].reduce.call(elements, (data, element) =>{
-  data[element.name] = element.value;
-  return data;
-}, {})
+
+
+
+

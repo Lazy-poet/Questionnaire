@@ -162,6 +162,10 @@ font-size: 1.2rem !important;
 background-color: hsl(249, 71%, 36%) !important
 }
  
+.data-display{
+font-size: 2rem;
+color: #000;
+}
 @media only screen and (min-width: 678px){
 body{
   padding: 50px;
