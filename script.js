@@ -31,11 +31,11 @@ const formToJSON = elements =>[].reduce.call(elements, (data, element) =>{
 }, {})
 
 const handleFormSubmit = e => {
-  // e.preventDefault()
+  e.preventDefault()
  // e.stopPropagation()
 
 const data = formToJSON(form.elements);
-const dataDisplay = document.querySelectorAll(".data-display")
+const dataDisplay = document.querySelectorAll(".data-display")[0];
 dataDisplay.textContent = JSON.stringify(data, null, " ");
 }
 
@@ -55,8 +55,17 @@ form.addEventListener('submit', handleFormSubmit);
         if (!form.checkValidity()) {
           event.preventDefault()
           event.stopPropagation()
+      display.style.display= "none"
          
         }
+       else {
+         window.alert("Form Submitted Successfully")
+        display.classList.add("prettyprint")
+         display.style.display="block"
+         container.style.display= "none"
+         document.querySelector(".form-container").setAttribute("style", "display: flex; align-items: center; justify-content: center; background-color:  hsl(225, 29%, 97%); height: 100vh; width: 100vw; border-radius: 0")
+         document.body.style.padding = "0"
+       } 
        
         form.classList.add('was-validated');
                  
