@@ -27,7 +27,7 @@ background-image: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
   background-color: #fff;
   display: flex !important;
   justify-content: center !important;
-  align-items: center
+  align-items: center;
 }
 .modal-header{
   padding: 30px 0 0;
@@ -35,7 +35,7 @@ background-image: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
   flex-direction: column
 }
 .modal-title{
-  font-size: 2rem !important;
+  font-size: 2.5rem !important;
   color: hsl(247, 6%, 9%);
 }
 .modal-body{
@@ -52,8 +52,15 @@ background-image: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
   outline: none;
   border-radius: 8px;
   width:260px;
-
-  background-color:hsl(240, 73%, 65%)
+  color: #fefeff;
+  font-size: 1.3rem;
+  background-color:hsl(240, 73%, 60%);
+  transition: .5s;
+  margin: 10px 0
+}
+.btn-custom3:hover{
+  background-color:hsl(240, 73%, 45%);
+color: #fff
 }
 .form-container{
   color: hsl(247, 6%, 29%);
