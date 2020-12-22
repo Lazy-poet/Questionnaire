@@ -76,6 +76,13 @@ var display = document.getElementById("code");
     })
 })();
 
+function validateCheckbox() {
+    if ($('input[type=checkbox]:checked').length > 0) {
+        $('input[type=checkbox]').prop('required', false);
+    } else {
+        $('input[type=checkbox]').prop('required', true);
+    }
 
+}
 
 
