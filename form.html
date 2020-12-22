@@ -13,92 +13,108 @@
 </head>
 
 <body>
-  <div class="form-container">
+  <div class="form-container contanier-fluid">
     <!-- <h1 class="header">Product Survey Form</h1> -->
+
     <h2>Carefully fill out all required info and select options as applicable</h2>
-    <form class="needs-validation" novalidate>
+
+    <form class="needs-validation" novalidate role="form">
       <div class="form-row">
         <ol>
           <li>
-            <p>Which of the following best describes you?</p>
-            <div class="form-check">
-              <input type="radio" name='gender' id="male" value="male" class="form-check-input">
-              <label for="male" class="form-check-label">Male
-              </label>
-            </div>
-            <div class="form-check">
-              <input type="radio" name='gender' id="female" value="female" class="form-check-input">
-              <label for="female" class="form-check-label">Female
-              </label>
-            </div>
-            <div class="form-check">
-              <input type="radio" name='gender' id="non-binary" value="non binary" class="form-check-input">
-              <label for="non-binary" class="form-check-label">Non-binary
-              </label>
-            </div>
-            <div class="form-check">
-              <input type="radio" name='gender' id="unspecified" value"unspecified" class="form-check-input">
-              <label for="unspecified" class="form-check-label">Prefer not to say
-              </label>
-            </div>
-            <div class="invalid-feedback">
-              <p>Please choose a username.</p>
+            <div class="form-group">
+              <p class="question">Which of the following best describes you?</p>
+
+              <div class="form-check">
+                <input type="radio" name='gender' id="male" value="male" class="form-check-input" required>
+                <label for="male" class="form-check-label">Male
+                </label>
+              </div>
+              <div class="form-check">
+                <input type="radio" name='gender' id="female" value="female" class="form-check-input">
+                <label for="female" class="form-check-label">Female
+                </label>
+              </div>
+              <div class="form-check">
+                <input type="radio" name='gender' id="non-binary" value="non binary" class="form-check-input">
+                <label for="non-binary" class="form-check-label">Non-binary
+                </label>
+              </div>
+              <div class="form-check">
+                <input type="radio" name='gender' id="unspecified" value"unspecified" class="form-check-input">
+                <label for="unspecified" class="form-check-label">Prefer not to say
+                </label>
+                <div class="invalid-feedback">
+                  Please select an option.
+                </div>
+              </div>
             </div>
           </li>
 
-
           <li>
             <div class="form-group">
-              <label for="dropdown">Age</label>
-              <select name="Age" id="dropdown" class="form-control">
-                <option disabled selected>select age range</option>
+              <label for="dropdown" class="question">Age</label>
+              <select name="Age" id="dropdown" class="form-select select" required>
+                <option disabled selected value="">select age range</option>
                 <option value="above 60">Above 60</option>
                 <option value="50-59">50-59</option>
                 <option value="40-49">40-49</option>
                 <option value="30-39">30-39</option>
                 <option value="below 30">Below 30</option>
+
               </select>
+              <div class="invalid-feedback">
+                Please select age
+              </div>
             </div>
           </li>
           <li>
-            <p>Which of these social media platforms do you utilize? <span>(select all applicable)</span></p>
-            <div class="form-check">
-              <input type="checkbox" id="facebook" class="form-check-input">
-              <label for="facebook" class="form-check-label">Facebook</label>
-            </div>
-            <div class="form-check">
-              <input type="checkbox" id="twitter" class="form-check-input">
-              <label for="twitter" class="form-check-label">Twitter</label>
-            </div>
-            <div class="form-check">
-              <input type="checkbox" id="instagram" class="form-check-input">
-              <label for="instagram" class="form-check-label">Instagram</label>
-            </div>
-            <div class="form-check">
-              <input type="checkbox" id="pinterest" class="form-check-input">
-              <label for="pinterest" class="form-check-label">Pinterest</label>
+            <div class="form-group">
+              <p class="question">Which of these social media platforms do you utilize? <span>(select all
+                  applicable)</span></p>
+              <div class="form-check">
+                <input type="checkbox" id="facebook" class="form-check-input">
+                <label for="facebook" class="form-check-label">Facebook</label>
+              </div>
+              <div class="form-check">
+                <input type="checkbox" id="twitter" class="form-check-input">
+                <label for="twitter" class="form-check-label">Twitter</label>
+              </div>
+              <div class="form-check">
+                <input type="checkbox" id="instagram" class="form-check-input">
+                <label for="instagram" class="form-check-label">Instagram</label>
+              </div>
+              <div class="form-check">
+                <input type="checkbox" id="pinterest" class="form-check-input">
+                <label for="pinterest" class="form-check-label">Pinterest</label>
+              </div>
             </div>
           </li>
 
           <li>
             <div class="form-group">
 
-              <p>We would like to appreciate you for taking time to answer these questions.
+              <p class="question">We would like to appreciate you for taking time to answer these questions.
                 Kindly enter your email address below to receive your reward link
               <p>
-                <input class="form-control" type="email" placeholder="Enter your email" id="email">
-
+                <input class="form-control email" type="email" placeholder="Enter your email" id="email" required>
+              <div class="valid-feedback">
+                Please enter your email.
+              </div>
             </div>
           </li>
         </ol>
       </div>
-      <button type="submit" class="btn btn-primary">Submit Form</button>
+      <div class="actions">
+        <input class="btn btn-custom" type="reset" value="Reset">
+        <button type="submit" class="btn btn-custom2">Submit </button>
+      </div>
     </form>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
     crossorigin="anonymous"></script>
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
