@@ -35,7 +35,7 @@ const handleFormSubmit = e => {
  // e.stopPropagation()
 
 const data = formToJSON(form.elements);
-const dataDisplay = document.getElementsByClassName("data-display")[0]
+const dataDisplay = document.querySelector(".data-display")
 dataDisplay.textContent = JSON.stringify(data, null, " ");
 }
 
