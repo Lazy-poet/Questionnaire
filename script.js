@@ -16,4 +16,8 @@
         form.classList.add('was-validated')
       }, false)
     })
-})()
+})();
+
+$(window).on("load", ()=>{
+  $("#exampleModalCenter").modal("show");
+});
