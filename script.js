@@ -1,22 +1,3 @@
-(function () {
-  'use strict'
-
-  // Fetch all the forms we want to apply custom Bootstrap validation styles to
-  var forms = document.querySelectorAll('.needs-validation')
-
-  // Loop over them and prevent submission
-  Array.prototype.slice.call(forms)
-    .forEach(function (form) {
-      form.addEventListener('submit', function (event) {
-        if (!form.checkValidity()) {
-          event.preventDefault()
-          event.stopPropagation()
-        }
-
-        form.classList.add('was-validated')
-      }, false)
-    })
-})();
 
 $(window).on("load", ()=>{
   $("#exampleModalCenter").modal("show");
@@ -48,20 +29,40 @@ const formToJSON = elements =>[].reduce.call(elements, (data, element) =>{
   }
   return data;
 }, {})
-function handleFormSubmit(e){
-  e.preventDefault();
+
+const handleFormSubmit = e => {
+  // e.preventDefault()
+ // e.stopPropagation()
+
 const data = formToJSON(form.elements);
 const dataDisplay = document.getElementsByClassName("data-display")[0]
 dataDisplay.textContent = JSON.stringify(data, null, " ");
-
 }
+
 const form = document.getElementById("formdata");
 form.addEventListener('submit', handleFormSubmit);
 
-/** 
- * @param {HTMLFormControlsCollection}
-@return {Object}
-*/
+(function () {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  var forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+         
+        }
+       
+        form.classList.add('was-validated');
+                 
+      }, false)
+    })
+})();
 
 
 
