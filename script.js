@@ -63,12 +63,13 @@ var display = document.getElementById("code");
          
         }
        else {
-         window.alert("Form Submitted Successfully")
+        
         code.classList.add("prettyprint")
          display.style.display="block"
          container.style.display= "none"
-         document.querySelector(".form-container").setAttribute("style", "display: flex; align-items: center; justify-content: center; background-color:  hsl(225, 29%, 97%); height: 100vh; width: 100vw; border-radius: 0")
-         document.body.style.padding = "0"
+         document.querySelector(".form-container").setAttribute("style", "display: flex; align-items: flex-start; justify-content: center; background-color:  hsl(225, 29%, 97%); height: 100vh; width: 100vw; border-radius: 0;")
+         document.body.setAttribute("style", "background-color: #fff; padding: 0")
+        //  document.querySelector("html").style.height= "100vh"
        } 
        validateCheckbox();
         form.classList.add('was-validated');
