@@ -49,7 +49,8 @@ form.addEventListener('submit', handleFormSubmit);
   var forms = document.querySelectorAll('.needs-validation')
 
 var display = document.getElementById("code");
-  var container = document.querySelector(".form")
+  var container = document.querySelector(".form");
+  var code = document.querySelector("pre")
 
   // Loop over them and prevent submission
   Array.prototype.slice.call(forms)
@@ -63,13 +64,13 @@ var display = document.getElementById("code");
         }
        else {
          window.alert("Form Submitted Successfully")
-        display.classList.add("prettyprint")
+        code.classList.add("prettyprint")
          display.style.display="block"
          container.style.display= "none"
          document.querySelector(".form-container").setAttribute("style", "display: flex; align-items: center; justify-content: center; background-color:  hsl(225, 29%, 97%); height: 100vh; width: 100vw; border-radius: 0")
          document.body.style.padding = "0"
        } 
-       
+       validateCheckbox();
         form.classList.add('was-validated');
                  
       }, false)
