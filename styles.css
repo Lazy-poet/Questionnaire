@@ -344,7 +344,7 @@ footer {
   ol {
     display: grid;
     grid-template-columns: .8fr .8fr;
-    grid-gap: 50px;
+    grid-gap: 40px;
     align-items: center;
   }
 
@@ -361,7 +361,7 @@ footer {
   }
 
   .question {
-    font-size: 1.5rem !important
+    font-size: 1.4rem !important
   }
 
   .select {
@@ -375,8 +375,8 @@ footer {
   input[type="radio"]~label,
   input[type="checkbox"],
   input[type="checkbox"]~label {
-    font-size: 1.5rem !important;
-    margin-bottom: 8px;
+    font-size: 1.3rem !important;
+    margin-bottom: 7px;
   }
 
   .email {

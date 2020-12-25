@@ -71,7 +71,8 @@ form.addEventListener('submit', handleFormSubmit);
           code.classList.add("prettyprint")
           display.style.display = "block"
           container.style.display = "none"
-          document.querySelector(".form-container").setAttribute("style", "display: flex; align-items: flex-start; justify-content: center; background-color:  hsl(225, 29%, 97%); height: 100vh; width: 100vw; border-radius: 0;")
+          document.querySelector(".form-container").setAttribute("style", 
+          "display: flex; align-items: flex-start; justify-content: center; background-color:  hsl(225, 29%, 97%); height: 100vh; width: 100vw; border-radius: 0; box-shadow: none")
           document.body.setAttribute("style", " background-color:  hsl(225, 29%, 97%); padding: 0")
          }
         validateCheckbox();
